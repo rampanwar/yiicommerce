@@ -1,0 +1,54 @@
+/*	FROM CSS	*/
+.required .required, .errorMessage {
+	color: red;
+}
+.errorMessage {
+	margin-top: 2px;
+}
+.fleft {
+	float: left !important;
+}
+.fright {
+	float: right !important;
+}
+.cclear {
+	clear: both;
+}
+.fullWidth {
+	float: left;
+	width: 100%;
+	clear: both;
+}
+.formLabel {
+	width: 200px;
+	float: left;
+}
+.formData {
+	float: left;
+	margin-bottom: 10px;
+}
+.radioList {
+	margin-right: 10px;
+	font-weight: normal;
+}
+.controls .radioList {
+	margin-top: 5px;
+}
+.radioList input[type="radio"] {
+	margin: 0px 3px 0px 0px;
+}
+.radioList label {
+	display: inline;
+	margin-right: 15px;
+	font-weight: normal;
+}
+select, textarea, input[type="text"], input[type="password"], .uneditable-input {
+	margin-bottom: 0px;
+}
+.formCancel{
+	margin-left: 15px;
+}
+
+.nav-tabs.nav-stacked>.active>a {
+	background-color: #EEE !important;
+}
