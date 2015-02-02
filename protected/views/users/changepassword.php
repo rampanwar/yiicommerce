@@ -21,10 +21,10 @@
 		echo $form->error($model,'u_pass_old'); ?>
 		<p class="hint">
 		</p>
-    </div>
+		</div>
 	</div>
 	
-  <div class="control-group">
+	<div class="control-group">
 		<?php echo $form->labelEx($model,'u_pass',array('class'=>"control-label")); ?>
 		<div class="controls">
 		<?php
@@ -32,37 +32,43 @@
 		echo $form->error($model,'u_pass'); ?>
 		<p class="hint">
 		</p>
-    </div>
+		</div>
 	</div>
 
 	<div class="control-group">
 		<?php echo $form->labelEx($model,'u_pass_confirm',array('class'=>"control-label")); ?>
 		<div class="controls">
 		<?php
-    echo $form->passwordField($model,'u_pass_confirm');
+		echo $form->passwordField($model,'u_pass_confirm');
 		echo $form->error($model,'u_pass_confirm'); ?>
-    </div>
+		</div>
 	</div>
 	<?php
-  if(CCaptcha::checkRequirements()){ ?>
+	if(CCaptcha::checkRequirements()){ ?>
 	<div class="control-group">
 		<?php echo $form->labelEx($model,'captcha_code',array('class'=>"control-label")); ?>
-		<div class="controls">
-    <?php
-		$this->widget('CCaptcha');
+		<div class="controls captcha_box">
+		<?php
+		$this->widget('CCaptcha', array(
+				'buttonType'=>'button', 
+				'buttonLabel'=>'Refresh', 
+				'buttonOptions'=>array(),
+				'imageOptions'=>array(),
+				)
+		);
 		echo '<br />';
 		echo $form->textField($model,'captcha_code');
 		echo $form->error($model,'captcha_code'); ?>
-    </div>
+		</div>
 	</div>
 	<?php } ?>
 
 <div class="control-group">
-  <label class="control-label">&nbsp;</label>
-  <div class="controls">
-  <?php echo CHtml::submitButton('Submit',array('class'=>"btn btn-primary"));
-        
-  ?>
+	<label class="control-label">&nbsp;</label>
+	<div class="controls">
+	<?php echo CHtml::submitButton('Submit',array('class'=>"btn btn-primary"));
+				
+	?>
 </div>
 
 <?php $this->endWidget(); ?>
